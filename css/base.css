@@ -1,0 +1,28 @@
+div,p,h1,h2,h3,h4,h5,h6,ul,li,body,html,ol{
+  padding:0;
+  margin:0;
+}
+ul,li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: #333;
+}
+html {
+    font-size: 100px;
+    -webkit-tap-highlight-color: transparent;
+    height: 100%;
+    min-width: 320px;
+    overflow-x: hidden;
+}
+body {
+    height: 100%;
+    font-size: .28rem;
+    margin: 0;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 1;
+    color: #333;
+    background-color: #f0efed;
+    display: block;
+}
