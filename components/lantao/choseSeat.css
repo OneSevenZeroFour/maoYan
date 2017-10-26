@@ -1,17 +1,17 @@
-#seats .main .item .c-tips {
+#seats .main .item .c-tips{
     margin-bottom: .2rem;
     height: .32rem;
     line-height: .32rem;
     background: #f0f0f0;
 }
-#seats .main-big .seat {
+#seats .main-big .seat{
     height: .4rem;
     width: .4rem;
     line-height: .4rem;
     margin: 0 .08rem .08rem 0;
     background-size: .4rem .4rem;
 }
-.seat {
+.seat{
     display: inline-block;
     width: .28rem;
     height: .28rem;

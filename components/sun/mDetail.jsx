@@ -19,7 +19,7 @@ class Mdetail extends React.Component{
 				</div>
 				<div className="nav">
 					<div>
-						<a href=""><img src="http://p1.meituan.net/177.249/movie/8032e4157e1fb1f6cdb52fcc37698c074599808.jpg" /></a>
+						<a href="http://localhost:12345/#/choseSeat"><img src="http://p1.meituan.net/177.249/movie/8032e4157e1fb1f6cdb52fcc37698c074599808.jpg" /></a>
 					</div>
 					<div>
 						<h1>王牌特工2：黄金圈</h1>
@@ -32,7 +32,7 @@ class Mdetail extends React.Component{
 					</div>
 				</div>
 				<div className="dt">
-					<a href="">立即购票</a>
+					<Link to="/choseSeat">立即购票</Link>
 					<div>
 						<p>本片讲述了艾格西（塔伦·埃格顿 饰）由前集中的特工“菜鸟”升级为特工老手，他与梅林（马克·斯特朗 饰）将前往美国，与王牌特工组织的美国政治家（哈莉·贝瑞 饰）一起并肩作战。而他们所面对的敌人则是美艳狠毒的大反派波比（朱丽安·摩尔 饰）。</p>
 					</div>
@@ -155,7 +155,7 @@ class Mdetail extends React.Component{
 				url:self.props.url
 			},
 			success:function(data){
-				var sss = JSON.parse(data);
+				var sss = data;
 				console.log(sss);
 			}
 		})

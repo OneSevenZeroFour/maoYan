@@ -16,7 +16,7 @@ class Xnow extends React.Component {
 		this.jg = (arr1)=>{
 			var self = this;
 			var result = arr1.map(function(item,idx){
-				return <Link to="/x/m" key={idx}><li>
+				return <Link to="/x/m" key={idx} style={{display:'block'}}><li>
 					<div className="box" onClick={self.send.bind(this,item.id)} data-id={item.id}>
 						<div><img src={item.img}/></div>
 						<div>
@@ -26,7 +26,7 @@ class Xnow extends React.Component {
 							<span>{item.showInfo}</span>
 						</div>
 						<b>{item.sc}<i>分</i></b>
-						<button>购票</button>
+						<Link to="/choseSeat"><button>购票</button></Link>
 					</div>
 				</li></Link>
 			})
@@ -50,17 +50,16 @@ class Xnow extends React.Component {
 			data:{
 				lm:self.state.lm
 			},
-			success:function(data){
-				var res = JSON.parse(data);
-				//console.log(res);
-				self.setState({
-					res:res.data.movies
-				})
+			success:function(res){
+				console.log(res)
+				self.setState(Object.assign({},self.state,{
+			        res:res.data.movies
+			    }))
 			}
 		})
-		window.onscroll=()=>{
+			window.onscroll=()=>{console.log(window.location.hash)
 			var scrollTop = window.scrollY;
-			if(scrollTop>=document.body.scrollHeight-window.innerHeight-50){
+			if(scrollTop>=document.body.scrollHeight-window.innerHeight-50 || window.location.hash === '#/home/movie'){
 				var self = this;
 				$.ajax({
 					url:'http://localhost:2345/faa',
@@ -68,12 +67,17 @@ class Xnow extends React.Component {
 					data:{
 						lm:self.state.lm
 					},
-					success:function(data){
-						var res = JSON.parse(data);
-						console.log(res);
-						self.setState({
-							res:res.data.movies
-						})
+					success:function(r){
+						self.state.res.push(r.data.movies);
+						console.log(self.state.res);
+						// console.log("1" + data);
+						// var res = JSON.parse(data);
+						// console.log(res);
+						self.setState(Object.assign({},self.state,{
+					        res:self.state.res
+
+					    }))
+					    // self.componentDidMount()
 						/*function jg(arr){
 							self.refs.ul.innerHTML = arr.map(function(item){
 								return `
@@ -98,6 +102,7 @@ class Xnow extends React.Component {
 				})
 			}
 		}
+		
 	}
 }
 export default connect((state) => {

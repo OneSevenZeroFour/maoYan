@@ -59,6 +59,7 @@ header.navbar .change-city:after {
   border-bottom: .08rem solid #DDD8CE;
   background: #fff;
   position: relative;
+  overflow:visible;
 }
 .taba li {
   display: block;
@@ -74,12 +75,12 @@ header.navbar .change-city:after {
     color: #e54847;
 }
 
-.taba .slide {
+.taba .slide2 {
     -webkit-transition: left .2s ease-in;
     width:355px;
     left:20px;
 }
-.taba .slide1{
+.taba .slide3{
   -webkit-transition: left .2s ease-in;
   width:355px;
   left:375px;
@@ -87,7 +88,7 @@ header.navbar .change-city:after {
   bottom: -.08rem;
   border-bottom: .08rem solid #e54847;
 }
-.taba .slide, .taba li.active:after {
+.taba .slide2, .taba li.active:after {
     position: absolute;
     bottom: -.08rem;
     border-bottom: .08rem solid #e54847;

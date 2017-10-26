@@ -1,6 +1,6 @@
 import React from "react";
 // import {hashHistory} from 'react-router';
-import "./myHeader.css"
+import "./myHeader.css";
 import {HashRouter as Router, Route, Link, Redirect} from 'react-router-dom'
 
 class myHeader extends React.Component {
@@ -17,7 +17,7 @@ class myHeader extends React.Component {
         val:'影院',
         path:'/home/cinema'
       }],
-      local:null
+      local:''
     }
     this.tog = (id)=>{
       this.state.defaultId = id;
@@ -37,12 +37,13 @@ class myHeader extends React.Component {
           var lat = r.point.lat;
           var lgt = r.point.lng;
           var point_ = new BMap.Point(lgt,lat);
-          alert('您的位置：'+r.point.lng+','+r.point.lat);
+          // alert('您的位置：'+r.point.lng+','+r.point.lat);
           var geoc = new BMap.Geocoder();
           geoc.getLocation(point_, function(rs){
-              self.setState(Object({},self.state,{
-                local:rs.address
+              self.setState(Object.assign({},self.state,{
+                local:rs.address.slice(3,5)
               }))
+              // console.log(rs.address.slice(3,5),self.state.local);
            })
 
         }
@@ -51,7 +52,7 @@ class myHeader extends React.Component {
   }
   componentWillMount() {console.log(window.location.hash == '#/home/cinema')
     this.getRouter();
-    // this.loc()
+    this.loc()
   }
   render() {
     return (<div>
@@ -77,7 +78,7 @@ class myHeader extends React.Component {
           })
         }
 
-        <div ref="slide" className={this.state.defaultId == 1 ? "slide":"slide1"}></div>
+        <div ref="slide" className={this.state.defaultId == 1 ? "slide2":"slide3"}></div>
       </ul>
     </div>)
   }

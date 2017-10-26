@@ -16,6 +16,7 @@ module.exports = {
 		},{
       test: /\.scss$/,
       loader: 'style-loader!css-loader!sass-loader'
+    },{
       test: /\.(jpg|png|gif|jpeg|woff|svg|eot|ttf)$/,
       loader: 'url-loader'
     }]

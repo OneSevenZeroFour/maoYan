@@ -1,78 +1,57 @@
 var express = require("express");
 var app = express();
 var http = require("http");
-var data = "";
-var result = "";
-
-
-function limit(lm){
-	http.get('http://m.maoyan.com/movie/list.json?type=hot&offset=0&limit='+lm,function(res){
-	  res.setEncoding('utf8');
-	  res.on('data',function(chunk){
-	    data += chunk;
-	  })
-	  res.on('end',function(){
-	    //console.log(data);
-	  })
-	}).on("error", function() {
-	    console.log("请求myUrl地址出错！");
-	})
-}
-
-
-/*function LS(num){
-	console.log(num);
-	http.get('http://m.maoyan.com/movie/'+num+'.json',function(res){
-	  res.setEncoding('utf8');
-	  res.on('data',function(chunkk){
-	    result += chunkk;
-	  })
-	  res.on('end',function(){
-	    //console.log(data);   
-	  })
-	}).end();
-}*/
-
-
 app.get('/faa',function(req, resp){
 	resp.append('Access-Control-Allow-Origin','*');
-	var LM = req.query.lm;
-	limit(LM);
-	resp.send(data);
+    let data = "";
+    http.get('http://m.maoyan.com/movie/list.json?type=hot&offset=0&limit='+req.query.lm,function(res){
+      res.setEncoding('utf8');
+      res.on('data',function(chunk){
+        data += chunk;
+      })
+      res.on('end',function(){
+        resp.send(JSON.parse(data));
+        console.log(typeof JSON.stringify(data));
+        console.log(typeof JSON.parse(data).control);
+      })
+    }).on("error", function() {
+        console.log("请求myUrl地址出错！");
+    })
+
 })
 
 
-/*app.get('/ls',function(req, resp){
+app.get('/ls',function(req, resp){
+    let result = "";
 	resp.append('Access-Control-Allow-Origin','*');
-	var rr = req.query.url;
-	console.log(rr);
-	LS(rr);
-	resp.send(result);
-})*/
-
-
-app.listen(2345);
-console.log("ok");
-
-var express = require("express")
-
-var app = express();
-var http = require("http");
-
+    http.get('http://m.maoyan.com/movie/'+req.query.url+'.json',function(res){
+      res.setEncoding('utf8');
+      res.on('data',function(chunkk){
+        result += chunkk;
+      })
+      res.on('end',function(){
+        resp.send(JSON.parse(result));  
+      })
+    }).on("error", function(){
+        console.log("请求myUrl地址出错！");
+    });
+})
 app.get('/cinemaJson',function(req, resp){
-    resp.set('Access-Control-Allow-Origin','*');
+    resp.append('Access-Control-Allow-Origin','*');
     http.get('http://m.maoyan.com/cinemas.json',function(res){
-      var data = '';
+      let data = '';
       res.setEncoding('utf8')
       res.on('data',function(chunk){
         data += chunk;
       })
       res.on('end',function(){
-        console.log(data)
+        resp.send(JSON.parse(data));  
       })
-    })
+    }).on("error", function(){
+        console.log("请求myUrl地址出错！");
+    });
 
 })
 app.listen(2345);
-console.log("ok")
+console.log("ok12")
 
