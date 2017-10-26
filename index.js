@@ -7,6 +7,23 @@ import Xnow from "./components/sun/xnow.jsx";
 import Mdetail from "./components/sun/mDetail.jsx";
 
 import React from "react";
+
+import { Provider } from "react-redux"
+import { HashRouter as Router , Route , Link ,Redirect} from "react-router-dom"
+
+import Xlogin from './components/wwj/login.jsx'
+
+ReactDOM.render(
+	<Router>
+		<Provider store={store}>
+			<div>
+				<Route  path="/login" component = {Xlogin}></Route>
+			</div>
+		</Provider>
+	</Router>,document.getElementById("demo")
+=======
+import {Provider} from "react-redux"
+>>>>>>> 8598cad6b55fd2a1ab85f1e69fc00d69bf6f9dcc
 import {HashRouter as Router, Route, Link, Redirect} from 'react-router-dom'
 import $ from "jquery"
 window.$ = $;
@@ -27,4 +44,5 @@ ReactDOM.render(<Router>
       <Route path="/choseSeat" component={ChoseSeat}></Route> 
     </div>
   </Provider></Router>,document.getElementById("demo")
+>>>>>>> 6ea7ce806d5de3c9e841841fa9bfb426fc39d186
   )

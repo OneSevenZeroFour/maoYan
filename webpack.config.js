@@ -16,9 +16,12 @@ module.exports = {
 		},{
       test: /\.scss$/,
       loader: 'style-loader!css-loader!sass-loader'
+      test: /\.(jpg|png|gif|jpeg|woff|svg|eot|ttf)$/,
+      loader: 'url-loader'
     }]
   },
-  devServer:{
+    watch: true,
+    devServer:{
     contentBase:"./public",
     inline:true,
     port:12345

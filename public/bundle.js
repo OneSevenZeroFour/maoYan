@@ -60,6 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
 /******/ 	return __webpack_require__(__webpack_require__.s = 47);
 /******/ })
 /************************************************************************/
@@ -28401,4 +28402,19 @@ var withRouter = function withRouter(Component) {
 
 /***/ })
 /******/ ]);
+=======
+/******/ 	return __webpack_require__(__webpack_require__.s = 52);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ 52:
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed: SyntaxError: E:/maoYan/index.js: Unexpected token (6:0)\n\n\u001b[0m \u001b[90m 4 | \u001b[39m\u001b[36mimport\u001b[39m \u001b[33mReact\u001b[39m from \u001b[32m\"react\"\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 5 | \u001b[39m\u001b[36mimport\u001b[39m store from \u001b[32m\"./store.js\"\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\n \u001b[90m   | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 7 | \u001b[39m\u001b[36mimport\u001b[39m { \u001b[33mProvider\u001b[39m } from \u001b[32m\"react-redux\"\u001b[39m\n \u001b[90m 8 | \u001b[39m\u001b[36mimport\u001b[39m { \u001b[33mHashRouter\u001b[39m as \u001b[33mRouter\u001b[39m \u001b[33m,\u001b[39m \u001b[33mRoute\u001b[39m \u001b[33m,\u001b[39m \u001b[33mLink\u001b[39m \u001b[33m,\u001b[39m\u001b[33mRedirect\u001b[39m} from \u001b[32m\"react-router-dom\"\u001b[39m\n \u001b[90m 9 | \u001b[39m\u001b[0m\n");
+
+/***/ })
+
+/******/ });
+>>>>>>> 8598cad6b55fd2a1ab85f1e69fc00d69bf6f9dcc
 //# sourceMappingURL=bundle.js.map
