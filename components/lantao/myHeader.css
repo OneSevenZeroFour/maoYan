@@ -1,0 +1,94 @@
+.navbar {
+  height: 1.01rem;
+  color: #fff;
+  display: -webkit-box;
+  position: relative;
+  border-bottom: 1px solid #e54847;
+  background: #e54847;
+}
+
+header.navbar h1.nav-header {
+  margin-left: .94rem;
+}
+
+header.navbar h1.nav-header {
+  display: block;
+  -webkit-box-flex: 1;
+  font-size: .36rem;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1rem;
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+header.navbar .nav-wrap-left {
+  float: none;
+  position: absolute;
+  height: 1.01rem;
+  line-height: 1.01rem;
+}
+
+header.navbar .change-city {
+  margin: .3rem 0 0 .3rem;
+  color: #FFF;
+  font-size: .3rem;
+  line-height: 1.5;
+  border-radius: 2px;
+}
+
+header.navbar .change-city:after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+  border-width: 8px;
+  border-color: #fff transparent transparent;
+  border-style: solid;
+  font-size: 0;
+  vertical-align: -2px;
+}
+
+.taba {
+  display: -webkit-box;
+  padding-left: .2rem;
+  padding-right: .2rem;
+  border-bottom: .08rem solid #DDD8CE;
+  background: #fff;
+  position: relative;
+}
+.taba li {
+  display: block;
+  text-align: center;
+  -webkit-box-flex: 1;
+}
+.taba li span.react {
+  padding-top: .28rem;
+  padding-bottom: .2rem;
+  display: block;
+}
+.active span{
+    color: #e54847;
+}
+
+.taba .slide {
+    -webkit-transition: left .2s ease-in;
+    width:355px;
+    left:20px;
+}
+.taba .slide1{
+  -webkit-transition: left .2s ease-in;
+  width:355px;
+  left:375px;
+  position: absolute;
+  bottom: -.08rem;
+  border-bottom: .08rem solid #e54847;
+}
+.taba .slide, .taba li.active:after {
+    position: absolute;
+    bottom: -.08rem;
+    border-bottom: .08rem solid #e54847;
+}

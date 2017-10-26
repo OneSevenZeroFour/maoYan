@@ -1,0 +1,80 @@
+body {
+    height: 100%;
+    margin: 0;
+    color: #333;
+    font-size: .24rem;
+}
+#tab_cinema {
+    display: block;
+    transform-origin: 0px 0px 0px;
+    opacity: 1;
+    transform: scale(1, 1);
+}
+.cinemalist, .taba {
+    background: #fff;
+}
+ul {
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+}
+a {
+    color: #666;
+}
+.cinema-container {
+    font-size: .26rem;
+    padding: .25rem 0;
+    margin-left: .32rem;
+    color: #666;
+    position: relative;
+    line-height: 1;
+    border-bottom: 1px solid #E6E6E6;
+}
+li{
+    list-style: none;
+    overflow: hidden;
+}
+.cinema-container .cinema-name {
+    font-size: .32rem;
+    color: #000;
+    display: inline-block;
+    max-width: 5.7rem;
+}
+.text-ellipsis {
+    white-space: nowrap;
+    text-overflow:ellipsis;
+}
+.cinema-container .price {
+    display: inline-block;
+    margin-left: .2rem;
+    font-size: .22rem;
+    line-height: .3rem;
+}
+.theme-color {
+    color: #e54847!important;
+}
+.cinema-container .address {
+    margin-top: .1rem;
+    padding-top: .1rem;
+    margin-right: 1rem;
+    width: 90%;
+    display: inline-block;
+    overflow:hidden;
+    line-height: -0.1rem;
+}
+.cinema-container .dis {
+    position: absolute;
+    top: .94rem;
+    right: .24rem;
+    color: #999;
+}
+.cinema-container .tag-list div {
+    margin-top: .2rem;
+    display: inline-block;
+    padding: .06rem;
+    border: 1px solid #589DAF;
+    border-radius: .08rem;
+    margin-right: .03rem;
+    font-size: .22rem;
+    color: #589DAF;
+}
