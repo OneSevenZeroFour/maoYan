@@ -1,5 +1,5 @@
 import React from "react";
-import {browserHistory} from 'react-router';
+// import {hashHistory} from 'react-router';
 import "./myHeader.css"
 import {HashRouter as Router, Route, Link, Redirect} from 'react-router-dom'
 
@@ -11,11 +11,11 @@ class myHeader extends React.Component {
       tab:[{
         id:1,
         val:'影片',
-        path:'/movie'
+        path:'/home/movie'
       },{
         id:2,
         val:'影院',
-        path:'/cinema'
+        path:'/home/cinema'
       }],
       local:null
     }
@@ -23,7 +23,7 @@ class myHeader extends React.Component {
       this.state.defaultId = id;
     }
     this.getRouter = ()=>{
-      if(window.location.hash == '#/cinema'){
+      if(window.location.hash == '#/home/cinema'){
         this.state.defaultId=2;
       }
     }
@@ -49,7 +49,7 @@ class myHeader extends React.Component {
       })
     }
   }
-  componentWillMount() {console.log(window.location.hash == '#/cinema')
+  componentWillMount() {console.log(window.location.hash == '#/home/cinema')
     this.getRouter();
     // this.loc()
   }
