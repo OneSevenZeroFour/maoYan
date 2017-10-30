@@ -12,8 +12,8 @@
  #### 接口使用
 
  #### 文件目录
- 文件夹 PATH 列表
-卷序列号为 4E22-8263
+```js
+
 │  .babelrc
 │  .gitignore
 │  index.js
@@ -93,5 +93,6 @@
             4.png
             5.png
             6.png
+```
             
 
