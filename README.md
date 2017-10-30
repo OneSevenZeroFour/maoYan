@@ -14,18 +14,17 @@
  #### 文件目录
 ```js
 
-│  .babelrc
+│  .babelrc                 //babel配置文件
 │  .gitignore
 │  index.js
 │  package-lock.json
-│  package.json
+│  package.json             //npm依赖
 │  README.md
 │  sendSMS.js
 │  server.js
 │  server1.js
-│  store.js
-│  tree.txt
-│  webpack.config.js
+│  store.js                 //组件的通信
+│  webpack.config.js        //webpack配置文件
 │  
 ├─.idea
 │      jsLibraryMappings.xml
@@ -38,12 +37,12 @@
 │      
 ├─components
 │  ├─lantao
-│  │      choseSeat.css
-│  │      choseSeat.jsx
-│  │      home.jsx
+│  │      choseSeat.css     //选座位样式
+│  │      choseSeat.jsx     //选座位组件
+│  │      home.jsx          //首页
 │  │      movie.jsx
-│  │      myHeader.css
-│  │      myHeader.jsx
+│  │      myHeader.css      //头部样式
+│  │      myHeader.jsx      //头部组件
 │  │      
 │  ├─lmm
 │  │      cinema.jsx
