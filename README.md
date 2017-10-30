@@ -14,7 +14,7 @@
  git clone git@github.com:OneSevenZeroFour/maoYan.git
  ```
  ## Installation(NPM)
-根据`package.json`安装`npm`相关依赖(需要安装Node.js v8以上版本)
+`npm install`(需要安装Node.js v8以上版本)
 
  ## COMMAND
 
@@ -50,9 +50,6 @@ http://localhost:12345/#/home/movie
 |-|-|-|-|-|
 |影院可放接口|`http://m.maoyan.com/showtime/wrap.json?cinemaid=17066&movieid=`|GET|cinemaid:cid;movieid:id;||
 
-|port|url |method|params|other|
-|-|-|-|-|-|
-|选座接口|||
 
 
  ## 文件目录
