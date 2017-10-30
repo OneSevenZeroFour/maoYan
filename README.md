@@ -40,7 +40,6 @@
 │  │      choseSeat.css     //选座位样式
 │  │      choseSeat.jsx     //选座位组件
 │  │      home.jsx          //首页
-│  │      movie.jsx
 │  │      myHeader.css      //头部样式
 │  │      myHeader.jsx      //头部组件
 │  │      
