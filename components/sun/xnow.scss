@@ -1,7 +1,7 @@
 *{padding:0;margin:0;list-style:none;text-decoration:none;}
 .wrap ul{
     overflow:hidden;
-    li{
+    .lis{
         float:left;
         width:100%;
         .box{
@@ -12,16 +12,16 @@
             overflow:hidden;
             padding:20px 0;
             position:relative;
-            div{
+            .divv{
                 float:left;
                 margin:10px 0 0 25px;
-                h1{color:#222;}
-                p{color:#666;font-size:26px;width:420px;}
-                span{font-size:26px;color:#999;}
-                img{width:124px;height:180px;}
+                .h11{color:#222;}
+                .pp{color:#666;font-size:26px;width:420px;}
+                .spann{font-size:26px;color:#999;}
+                .imgg{width:124px;height:180px;}
             }
-            b{float:right;color:#FFB400;margin:15px 15px 0 0;font-size:30px;i{font-style:normal;font-size:20px;}}
-            button{
+            .bb{float:right;color:#FFB400;margin:15px 15px 0 0;font-size:30px;i{font-style:normal;font-size:20px;}}
+            .btn{
                 width:95px;
                 height:50px;
                 position:absolute;
@@ -35,4 +35,17 @@
             }
         }
     }
+}
+#name{
+    width:100px;
+    height:100px;
+    border:1px solid #ccc;
+    border-radius:50%;
+    position:fixed;
+    bottom:50px;
+    right:20px;
+    background-color:white;
+    line-height:100px;
+    text-align:center;
+    color:#EF4238;
 }

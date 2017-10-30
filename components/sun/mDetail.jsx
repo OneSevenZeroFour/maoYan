@@ -1,104 +1,79 @@
 import React from "react";
 import $ from "jquery";
 import {connect} from "react-redux";
+import {Route, Link} from 'react-router-dom';
 import "./mDetail.scss";
 class Mdetail extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			
+			ress:'',
+			crm:[],
+			arr3:[]
+		}
+		this.crmm = (rss)=>{
+			console.log(rss);
+			var rr = rss.map(function(item){
+				return <div className="xbody">
+							<div className="sq">
+								<p>{item.time}</p>
+								<div className="content">{item.content}</div>
+								<div className="xfoot">
+									<div className="xleft">
+										<img src={item.avatarurl?item.avatarurl:'https://img.meituan.net/avatar/4c99d12f02c6946ee00b4a48b5226c468852.jpg'}/>
+										<span>{item.nickName}</span>
+										<i>购</i>
+									</div>
+									<div className="xright">
+										<span>{item.approve}</span>
+										<span>{item.reply}</span>
+									</div>
+								</div>
+							</div>
+						</div>
+			})
+			return rr;
+		}
+		this.pp = (arr1)=>{
+			var tt = arr1.map(function(item){
+				return <li>
+							<div><img src="//p0.meituan.net/movie/33665c3a76855feb9ac065686c7c305639702.jpg@130w_180h.webp"/></div>
+							<p>{item}</p>
+							<span>演员</span>
+						</li>
+			})
+			return tt;
 		}
 	}
-	
 	render(){
 		return (
 			<div id="warp">
 				<div className="header">
-					<b>&lt;</b>
-					王牌特工2：黄金圈
+					<Link to="/home/xnow"><b>&lt;</b></Link>
+					{this.state.ress.nm}
 				</div>
 				<div className="nav">
 					<div>
-						<a href="http://localhost:12345/#/choseSeat"><img src="http://p1.meituan.net/177.249/movie/8032e4157e1fb1f6cdb52fcc37698c074599808.jpg" /></a>
+						<a href="http://localhost:12345/#/choseSeat"><img src={this.state.ress.img} /></a>
 					</div>
 					<div>
-						<h1>王牌特工2：黄金圈</h1>
-						<p>Kingsman: The Golden Circle</p>
-						<span>8.7</span>
-						<p>8.4万<b>人评分</b></p>
-						<p>动作,冒险</p>
-						<p>英国,美国</p>
-						<p>2017-10-20大陆上映</p>
+						<h1>{this.state.ress.nm}</h1>
+						<p>{this.state.ress.ver}</p>
+						<span>{this.state.ress.sc}</span>
+						<p>{this.state.ress.snum}<b>万人评分</b></p>
+						<p>{this.state.ress.cat}</p>
+						<p>{this.state.ress.src}</p>
+						<p>{this.state.ress.rt}</p>
 					</div>
 				</div>
 				<div className="dt">
 					<Link to="/choseSeat">立即购票</Link>
-					<div>
-						<p>本片讲述了艾格西（塔伦·埃格顿 饰）由前集中的特工“菜鸟”升级为特工老手，他与梅林（马克·斯特朗 饰）将前往美国，与王牌特工组织的美国政治家（哈莉·贝瑞 饰）一起并肩作战。而他们所面对的敌人则是美艳狠毒的大反派波比（朱丽安·摩尔 饰）。</p>
+					<div ref="p">
 					</div>
 				</div>
 				<div className="person">
 					<ul>
-						<li>
-							<div><img src="//p1.meituan.net/movie/dd0be88ca9ebf162bfdbfa2087979633139912.jpg@130w_180h.webp" /></div>
-							<p>马修·沃恩</p>
-							<span>导演</span>
-						</li>
-						<li>
-							<div><img src="//p1.meituan.net/movie/dd0be88ca9ebf162bfdbfa2087979633139912.jpg@130w_180h.webp" /></div>
-							<p>马修·沃恩</p>
-							<span>导演</span>
-						</li>
-						<li>
-							<div><img src="//p1.meituan.net/movie/dd0be88ca9ebf162bfdbfa2087979633139912.jpg@130w_180h.webp" /></div>
-							<p>马修·沃恩</p>
-							<span>导演</span>
-						</li>
-						<li>
-							<div><img src="//p1.meituan.net/movie/dd0be88ca9ebf162bfdbfa2087979633139912.jpg@130w_180h.webp" /></div>
-							<p>马修·沃恩</p>
-							<span>导演</span>
-						</li>
-						<li>
-							<div><img src="//p1.meituan.net/movie/dd0be88ca9ebf162bfdbfa2087979633139912.jpg@130w_180h.webp" /></div>
-							<p>马修·沃恩</p>
-							<span>导演</span>
-						</li>
-						<li>
-							<div><img src="//p1.meituan.net/movie/dd0be88ca9ebf162bfdbfa2087979633139912.jpg@130w_180h.webp" /></div>
-							<p>马修·沃恩</p>
-							<span>导演</span>
-						</li>
-						<li>
-							<div><img src="//p1.meituan.net/movie/dd0be88ca9ebf162bfdbfa2087979633139912.jpg@130w_180h.webp" /></div>
-							<p>马修·沃恩</p>
-							<span>导演</span>
-						</li>
-						<li>
-							<div><img src="//p1.meituan.net/movie/dd0be88ca9ebf162bfdbfa2087979633139912.jpg@130w_180h.webp" /></div>
-							<p>马修·沃恩</p>
-							<span>导演</span>
-						</li>
-						<li>
-							<div><img src="//p1.meituan.net/movie/dd0be88ca9ebf162bfdbfa2087979633139912.jpg@130w_180h.webp" /></div>
-							<p>马修·沃恩</p>
-							<span>导演</span>
-						</li>
-						<li>
-							<div><img src="//p1.meituan.net/movie/dd0be88ca9ebf162bfdbfa2087979633139912.jpg@130w_180h.webp" /></div>
-							<p>马修·沃恩</p>
-							<span>导演</span>
-						</li>
-						<li>
-							<div><img src="//p1.meituan.net/movie/dd0be88ca9ebf162bfdbfa2087979633139912.jpg@130w_180h.webp" /></div>
-							<p>马修·沃恩</p>
-							<span>导演</span>
-						</li>
-						<li>
-							<div><img src="//p1.meituan.net/movie/dd0be88ca9ebf162bfdbfa2087979633139912.jpg@130w_180h.webp" /></div>
-							<p>马修·沃恩</p>
-							<span>导演</span>
-						</li>
+						{this.pp(this.state.arr3)}
 					</ul>
 				</div>
 				<div className="all">
@@ -107,56 +82,54 @@ class Mdetail extends React.Component{
 				</div>
 				<div className="pai">
 					<div>
-						<span>1</span>
+						<span>{this.state.ress.vnum}</span>
 						<p>昨日票房排行</p>
 					</div>
 					<div>
-						<span>13243</span>
+						<span>{this.state.ress.pn}</span>
 						<p>首周票房(万)</p>
 					</div>
 					<div>
-						<span>1</span>
+						<span>{this.state.ress.dur}</span>
 						<p>累计票房(万)</p>
 					</div>
 					<b>&gt;</b>
 				</div>
 				<div className="pl">
 					<div className="title">短评</div>
-					<div className="xbody">
-						<div className="sq">
-							<p>4天前</p>
-							<div className="content">看完第一部觉得不错，看见出第二部就赶紧买了首映的票，整体感觉还可以，谈不上惊艳，也许是第一部的光环还在，影响到第二部的精彩。（其实梅林很帅，为什么要死？为什么？他比其他人都帅啊啊，这就不科学了，我觉得吧，为什么梅林的戏那么少，多一点会好很多</div>
-							<div className="xfoot">
-								<div className="xleft">
-									<img src=""/>
-									<span>asdsad</span>
-									<i>购</i>
-								</div>
-								<div className="xright">
-									<span>3213</span>
-									<span>{this.props.url}</span>
-								</div>
-							</div>
-						</div>
-					</div>
+					{this.crmm(this.state.crm)}
 				</div>
-				<div >
-					<div className="title">相关电影</div>
+				<div className="xfooter">
+					<span>登录</span>
+					<span>注册</span>
+					<p>友情链接:<a>猫眼专业版</a><a>美团网</a></p>
+					<p>© 猫眼电影 客服电话: </p>
+					<p>京ICP备16022489号-1 京公网安备11010502030881号</p>
+					<p>北京猫眼文化传媒有限公司</p>
 				</div>
 			</div>
 		)
 	}
 	componentDidMount(){
 		var self = this;
+		var para = 'http://m.maoyan.com/movie/'+self.props.url+'.json'
 		$.ajax({
-			url:"http://localhost:2345/ls",
+			url:"http://localhost:23456/cina",
 			type:"GET",
 			data:{
-				url:self.props.url
+				para:para
 			},
 			success:function(data){
-				var sss = data;
-				console.log(sss);
+				var datas = JSON.parse(data);
+				console.log(datas);
+				var res = datas.data.MovieDetailModel;
+				var ress = datas.data.CommentResponseModel
+				self.setState(Object.assign({},self.state,{
+			        ress:res,
+					crm:ress.cmts,
+					arr3:res.star.split(' ').slice(0,20)
+			    }))
+				self.refs.p.innerHTML = self.state.ress.dra;
 			}
 		})
 	}

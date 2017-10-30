@@ -35,10 +35,14 @@ http://localhost:12345/#/home/movie
 |-|-|-|-|-|
 |登录接口|||||
 
+|port|url |method|params|other|
+|-|-|-|-|-|
+|电影接口|`http://m.maoyan.com/movie/list.json?type=hot&offset=0&limit=99`|GET|无||
+
 
 |port|url |method|params|other|
 |-|-|-|-|-|
-|电影接口|||||
+|电影详情接口|`http://m.maoyan.com/movie/`|GET|self.props.url||
 
 |port|url |method|params|other|
 |-|-|-|-|-|

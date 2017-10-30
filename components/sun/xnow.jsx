@@ -14,19 +14,20 @@ class Xnow extends React.Component {
 			this.props.ok(idx);
 		}
 		this.jg = (arr1)=>{
+			console.log(arr1);
 			var self = this;
 			var result = arr1.map(function(item,idx){
-				return <Link to="/x/m" key={idx} style={{display:'block'}}><li>
+				return <Link to="/x/m" key={idx} style={{display:'block'}}><li className="lis">
 					<div className="box" onClick={self.send.bind(this,item.id)} data-id={item.id}>
-						<div><img src={item.img}/></div>
-						<div>
-							<h1>{item.nm}</h1>
-							<p>{item.cat}</p>
-							<p>{item.star}</p>
-							<span>{item.showInfo}</span>
+						<div className="divv"><img className="imgg" src={item.img}/></div>
+						<div className="divv">
+							<h1 className="h11">{item.nm}</h1>
+							<p className="pp">{item.cat}</p>
+							<p className="pp">{item.star}</p>
+							<span className="spann">{item.showInfo}</span>
 						</div>
-						<b>{item.sc}<i>分</i></b>
-						<Link to="/choseSeat"><button>购票</button></Link>
+						<b className="bb">{item.sc}<i>分</i></b>
+						<Link to="/choseSeat"><button className="btn">购票</button></Link>
 					</div>
 				</li></Link>
 			})
@@ -36,68 +37,49 @@ class Xnow extends React.Component {
 	render(){
 		return (
 			<div className="wrap">
-				<ul ref="ul">
+				<ul ref="ul" className="lists">
 					{this.jg(this.state.res)}
 				</ul>
+				<div id="name">
+					我的
+				</div>
 			</div>
 		)
 	}
 	componentDidMount(){
 		var self = this;
+		var para = 'http://m.maoyan.com/movie/list.json?type=hot&offset=0&limit=99';
 		$.ajax({
-			url:'http://localhost:2345/faa',
+			url:'http://localhost:23456/cina',
 			type:'GET',
 			data:{
-				lm:self.state.lm
+				para:para
 			},
 			success:function(res){
-				console.log(res)
+				var datas = JSON.parse(res).data;
 				self.setState(Object.assign({},self.state,{
-			        res:res.data.movies
+			        res:datas.movies.slice(0,self.state.lm),
+			        lm:self.state.lm+10
 			    }))
 			}
 		})
-			window.onscroll=()=>{console.log(window.location.hash)
+			window.onscroll=()=>{
 			var scrollTop = window.scrollY;
-			if(scrollTop>=document.body.scrollHeight-window.innerHeight-50 || window.location.hash === '#/home/movie'){
+			if(scrollTop>=document.body.scrollHeight-window.innerHeight-50 && window.location.hash === '#/home/movie'){
 				var self = this;
+				var para = 'http://m.maoyan.com/movie/list.json?type=hot&offset=0&limit=99';
 				$.ajax({
-					url:'http://localhost:2345/faa',
+					url:'http://localhost:23456/cina',
 					type:'GET',
 					data:{
-						lm:self.state.lm
+						para:para
 					},
 					success:function(r){
-						self.state.res.push(r.data.movies);
-						console.log(self.state.res);
-						// console.log("1" + data);
-						// var res = JSON.parse(data);
-						// console.log(res);
+						var ress = JSON.parse(r).data;
 						self.setState(Object.assign({},self.state,{
-					        res:self.state.res
-
+					        res:ress.movies.slice(0,self.state.lm),
+			        		lm:self.state.lm+10
 					    }))
-					    // self.componentDidMount()
-						/*function jg(arr){
-							self.refs.ul.innerHTML = arr.map(function(item){
-								return `
-									<li>
-										<a href="#">
-											<div><img src="${item.img}"/></div>
-											<div>
-												<h1>${item.nm}</h1>
-												<p>${item.cat}</p>
-												<p>${item.star}</p>
-												<span>${item.showInfo}</span>
-											</div>
-											<b>${item.sc}<i>分</i></b>
-											<button>购票</button>
-										</a>
-									</li>
-								`
-							}).join('');
-						}
-						jg(self.state.res);*/
 					}
 				})
 			}
