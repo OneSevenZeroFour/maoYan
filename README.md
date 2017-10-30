@@ -1,17 +1,61 @@
-# maoYan
-组员（孙杰辉、兰涛、梁嫚嫚、王文健）
- #### 需求分析：
-1、首页懒加载、tab切换路由且刷新后保持不变、定位
-2、各个页面渲染数据
-3、选座位后标绿、提交订单后变红
-4、美团登录，手机验证登录
-  #### 运行方式
-- npm install(需要安装Node.js v8以上版本)
-- webpack-dev-server
-- npm server (http://localhost:12345/#/home/movie)
- #### 接口使用
+ ## maoYan
+ 基于react+redux+react-router+ES6+webpack的单页面应用.
+ ## DEMAND ANALYSIS
+ - 首页懒加载、tab切换路由且刷新后保持不变、定位
+ - 各个页面渲染数据
+ - 选座位后标绿、提交订单后变红
+ - 美团登录，手机验证登录
+ - Node.js服务器代理请求数据
 
- #### 文件目录
+ ## Installation(Git)
+
+克隆项目地址并下载 
+ ```js
+ git clone git@github.com:OneSevenZeroFour/maoYan.git
+ ```
+ ## Installation(NPM)
+根据`package.json`安装`npm`相关依赖(需要安装Node.js v8以上版本)
+
+ ## COMMAND
+
+maoyan根目录下打开命令窗口
+```js
+webpack-dev-server
+npm server
+npm server1
+```
+ ## BROWER
+用浏览器打开链接
+```js
+http://localhost:12345/#/home/movie
+```
+ ## PORTS
+
+|port|url |method|params|other|
+|-|-|-|-|-|
+|登录接口|||||
+
+
+|port|url |method|params|other|
+|-|-|-|-|-|
+|电影接口|||||
+
+|port|url |method|params|other|
+|-|-|-|-|-|
+|影院接口|`http://m.maoyan.com/cinemas.json`|GET|id||
+
+
+
+|port|url |method|params|other|
+|-|-|-|-|-|
+|影院可放接口|`http://m.maoyan.com/showtime/wrap.json?cinemaid=17066&movieid=`|GET|cinemaid:cid;movieid:id;||
+
+|port|url |method|params|other|
+|-|-|-|-|-|
+|选座接口|||
+
+
+ ## 文件目录
 ```js
 
 │  .babelrc                 //babel配置文件
