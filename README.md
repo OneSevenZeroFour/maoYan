@@ -52,7 +52,7 @@ http://localhost:12345/#/home/movie
 
 |port|url |method|params|other|
 |-|-|-|-|-|
-|影院可放接口|`http://m.maoyan.com/showtime/wrap.json?cinemaid=17066&movieid=`|GET|cinemaid:cid;movieid:id;||
+|影院可放接口|`http://m.maoyan.com/showtime/wrap.json?cinemaid=17066&movieid=`|GET|cinemaid=cid;movieid=id;||
 
 
 
@@ -66,7 +66,6 @@ http://localhost:12345/#/home/movie
 │  package.json             //npm依赖
 │  README.md
 │  sendSMS.js
-│  server.js
 │  server1.js
 │  store.js                 //组件的通信
 │  webpack.config.js        //webpack配置文件
