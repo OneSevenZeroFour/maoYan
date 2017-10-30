@@ -1,4 +1,4 @@
-*{margin: 0;padding: 0;text-decoration: none;list-style: none;}
+/**{margin: 0;padding: 0;text-decoration: none;list-style: none;}*/
 body{background: #F7F7F7}
 .navbar{height: 101px;color:#fff;background: #df2d2d;display: -webkit-box;}
 .navbar .nav-wrap-left{height: 101px;line-height: 101px;}
