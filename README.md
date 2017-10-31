@@ -98,13 +98,13 @@ http://localhost:12345/#/home/movie
 │  │      xnow.scss
 │  │      
 │  └─wwj
-│      │  ChildMTaccountLogin.jsx
-│      │  ChildPhoneLogin.jsx
-│      │  login.css
-│      │  login.jsx
-│      │  
-│      └─font_lefticon
-│              demo.css
+│      │  ChildMTaccountLogin.jsx     //登陆界面 美团账号登陆子组件
+│      │  ChildPhoneLogin.jsx         //登陆界面 手机号码子组件
+│      │  login.css                   //登陆界面样式
+│      │  login.jsx                   //登陆界面子路由页面
+│      │  
+│      └─font_lefticon                //登陆界面用到的icon font字体
+│              demo.css
 │              demo_fontclass.html
 │              demo_symbol.html
 │              demo_unicode.html
