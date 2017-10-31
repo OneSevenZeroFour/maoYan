@@ -33,7 +33,7 @@ http://localhost:12345/#/home/movie
 
 |port|url |method|params|other|
 |-|-|-|-|-|
-|登录接口|||||
+|登录接口|使用 阿里云 服务|POST|||
 
 |port|url |method|params|other|
 |-|-|-|-|-|
